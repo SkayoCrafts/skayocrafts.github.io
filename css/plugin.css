@@ -10,6 +10,7 @@
 	--header-desc-size: 1.5rem;
 	--social-icon-size: 50px;
 	--button-padding:   2.5rem;
+	--button-icon-size: 24px;
 
 	/* Various Text */
 	--plugin-description-size: 1.05rem;
@@ -99,6 +100,8 @@ header {
 
 #plugin-store #plugin-store-btn #store-icon {
 	vertical-align: sub;
+	width:  var(--button-icon-size);
+	height: var(--button-icon-size);
 }
 
 #plugin-store #plugin-store-price {
@@ -159,9 +162,14 @@ header {
 		font-size: calc(var(--header-desc-size) / 1.4);
 	}
 
-	#plugin-store-btn {
+	#plugin-store #plugin-store-btn {
 		padding:   calc(var(--button-padding) / 2) !important;
 		font-size: 1rem;
+	}
+
+	#plugin-store #plugin-store-btn #store-icon {
+		width:  calc(var(--button-icon-size) / 1.5);
+		height: calc(var(--button-icon-size) / 1.5);
 	}
 
 	#social-media {
