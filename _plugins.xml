@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<plugins>
+    <plugin>
+        <name>Social GitLab</name>
+        <handle>social-gitlab</handle>
+        <short-description>GitLab integration for Social</short-description>
+        <link-store>https://plugins.craftcms.com/social-gitlab</link-store>
+        <price>Free</price>
+        <description><![CDATA[
+            This plugin provides a <a href="https://gitlab.com">GitLab</a> integration for
+            <a href="https://github.com/dukt/social">Social 2 for Craft CMS</a>,
+            so you can add OAuth2 authentication via GitLab to your Craft CMS Site!
+        ]]></description>
+        <link-github>https://github.com/SkayoCrafts/social-gitlab</link-github>
+        <link-packagist>https://packagist.org/packages/skayocrafts/social-gitlab</link-packagist>
+    </plugin>
+</plugins>

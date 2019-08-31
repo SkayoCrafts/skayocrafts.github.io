@@ -5,10 +5,6 @@ branches:
   only:
     - source
 
-before_script:
-  - ls
-  - ls _templates
-
 script:
   - php ./_generator/generate.php
 

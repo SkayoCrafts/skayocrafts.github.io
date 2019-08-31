@@ -12,8 +12,7 @@
 	--button-padding:   2.5rem;
 
 	/* Various Text */
-	--left-text-size: 1.05rem;
-	--plugin-link-size: 1.1rem;
+	--plugin-description-size: 1.05rem;
 
 	/* Colors */
 	--my-grey:          #343a40;
@@ -70,12 +69,11 @@ header {
 	margin: 0 auto;
 }
 
-#left-side {
+#intro {
 	margin-right: 0px;
-	border-right: #000 dashed 1px;
 }
 
-#left-side #name {
+#intro #name {
 	font-family:    var(--font-header);
 	font-weight:    900;
 	font-size:      var(--header-size);
@@ -83,33 +81,34 @@ header {
 	color:          var(--my-black);
 }
 
-#left-side #description, #right-side #title {
+#intro #description {
 	font-weight: normal;
 	font-size:   var(--header-desc-size);
 }
 
-#right-side {
+#plugin-store {
 	margin: auto 0;
 }
 
-#right-side #plugin-store-btn {
+#plugin-store #plugin-store-btn {
 	background-color: var(--my-black);
 	color:            #fff;
 	font-family:      var(--font-text);
 	padding:          var(--button-padding);
 }
 
-#plugin-store-btn #store-icon {
+#plugin-store #plugin-store-btn #store-icon {
 	vertical-align: sub;
 }
 
-.plugin-link {
-	font-size: var(--plugin-link-size) !important;
+#plugin-store #plugin-store-price {
+	margin-top: 10px;
+	font-size: var(--plugin-description-size);
 }
 
-#left-text {
+#plugin-description {
 	margin-right: 0px;
-	font-size: var(--left-text-size);
+	font-size: var(--plugin-description-size);
 }
 
 #right-text {
@@ -152,20 +151,12 @@ header {
 		height: calc(var(--logo-height) / 2.5);
 	}
 
-	#left-side {
-		border-right: none;
-	}
-
-	#left-side #name {
+	#intro #name {
 		font-size: calc(var(--header-size) / 1.8);
 	}
 
-	#left-side #description {
+	#intro #description {
 		font-size: calc(var(--header-desc-size) / 1.4);
-	}
-
-	#right-side #title {
-		font-size: calc(var(--header-desc-size) / 1.3);
 	}
 
 	#plugin-store-btn {
