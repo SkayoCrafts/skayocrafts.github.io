@@ -10,6 +10,7 @@ script:
 
 before_deploy:
   - rm -rf _**  # Remove all files and folders with a underscore prefix (generator files)
+  - rm -rf .**  # Remove all files and folders with a dot prefix
 
 deploy:
   provider: pages
