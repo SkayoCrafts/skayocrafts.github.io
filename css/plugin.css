@@ -160,7 +160,7 @@ header {
 	}
 
 	#plugin-store-btn {
-		padding:   calc(var(--button-padding) / 2);
+		padding:   calc(var(--button-padding) / 2) !important;
 		font-size: 1rem;
 	}
 
