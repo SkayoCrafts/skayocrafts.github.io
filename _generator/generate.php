@@ -2,9 +2,11 @@
 
 echo PHP_EOL . PHP_EOL . '<< SkayoCrafts Website - Static Site Generator >>' . PHP_EOL . PHP_EOL;
 
+echo 'Working dir: ' . getcwd() . PHP_EOL . PHP_EOL;
+
 echo '> Reading _plugins.json... ';
 
-$rawJson = file_get_contents('_plugins.json');
+$rawJson = file_get_contents('./_plugins.json');
 
 if (!$rawJson)
 	die('Failed!' . PHP_EOL);
@@ -35,7 +37,7 @@ echo 'Done.' . PHP_EOL;
 
 echo '> Generating index.html out of _templates/_index.html... ';
 
-$indexHtmlTemplate = file_get_contents('_templates/_index.html...');
+$indexHtmlTemplate = file_get_contents('./_templates/_index.html...');
 
 if (!$indexHtmlTemplate)
 	die('Failed!' . PHP_EOL);
@@ -50,7 +52,7 @@ echo 'Done.' . PHP_EOL;
 foreach ($plugins as $plugin) {
 	echo "> Generating {$plugin['handle']}/index.html out of _templates/_plugin.html... ";
 
-	$pluginHtmlTemplate = file_get_contents('_templates/_plugin.html');
+	$pluginHtmlTemplate = file_get_contents('./_templates/_index.html');
 
 	if (!$pluginHtmlTemplate)
 		die('Failed!' . PHP_EOL);
