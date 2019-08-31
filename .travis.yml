@@ -6,7 +6,8 @@ branches:
     - source
 
 before_script:
-  - tree
+  - ls
+  - ls _templates
 
 script:
   - php ./_generator/generate.php
