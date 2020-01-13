@@ -20,6 +20,10 @@ function ready() {
 			}
 		};
 	}
+
+	if (typeof _ready === 'function') {
+		_ready();
+	}
 }
 
 if (document.readyState != 'loading'){

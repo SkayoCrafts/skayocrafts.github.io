@@ -164,6 +164,7 @@
 
 #social-media {
 	margin-top: 1rem;
+	margin-bottom: 0;
 }
 
 .social-logo {
@@ -187,6 +188,10 @@
 
 #packagist-logo:hover {
 	stroke: var(--my-light-grey);
+}
+
+#version {
+	font-size:  var(--plugin-description-size);
 }
 
 /* MEDIA QUERIES */
@@ -215,7 +220,7 @@
 	}
 
 	#left-side #description {
-		font-size: calc(var(--header-desc-size) / 1.4);
+		font-size: calc(var(--header-desc-size) / 1.2);
 	}
 
 	#right-side #title {
@@ -224,7 +229,7 @@
 
 	#plugin-store #plugin-store-btn {
 		padding:   calc(var(--button-padding) / 1.3) !important;
-		font-size: 1rem;
+		font-size: 1.5rem;
 	}
 
 	#plugin-store #plugin-store-btn #store-icon {

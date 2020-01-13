@@ -13,7 +13,7 @@
 
 	/* Various Text */
 	--left-text-size: 1.05rem;
-	--plugin-link-size: 1.1rem;
+	--plugin-link-size: 1.25rem;
 
 	/* Colors */
 	--my-grey:          #343a40;
@@ -134,7 +134,7 @@
 	}
 
 	#left-side #description {
-		font-size: calc(var(--header-desc-size) / 1.4);
+		font-size: calc(var(--header-desc-size) / 1.2);
 	}
 
 	#right-side #title {
