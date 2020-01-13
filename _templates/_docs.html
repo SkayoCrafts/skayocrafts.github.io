@@ -23,14 +23,16 @@
 
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.0/css/bulma.min.css">
 		<link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-		<link rel="stylesheet" href="/css/main.css">
+		<link rel="stylesheet" href="/css/docs.css">
 
-		<title>SkayoCrafts - Craft CMS Plugins made by Skayo</title>
+		<title>SkayoCrafts - {{ name }} Documentation</title>
 	</head>
 	<body>
 		<div id="hexagonalImages">
 			<div id="skayocrafts-logo">
-				<img class="animated fadeInDown" data-reverse="fadeOutUp" src="/assets/images/skayocrafts-logo.png" alt="SkayoCrafts Logo" title="SkayoCrafts - Craft CMS Plugins made by Skayo">
+				<a href="/{{ handle }}">
+					<img class="animated fadeInDown" data-reverse="fadeOutUp" src="/assets/images/skayocrafts-logo.png" alt="SkayoCrafts Logo" title="SkayoCrafts - Craft CMS Plugins made by Skayo">
+				</a>
 			</div>
 
 			<div id="skayo-logo">
@@ -41,33 +43,13 @@
 		</div>
 
 		<div id="content" class="container is-responsive animated fadeIn" data-reverse="fadeOut">
-			<section>
-				<div class="columns is-centered is-vcentered">
-					<div id="left-side" class="column is-7">
-						<h1 id="name" class="has-text-centered">SkayoCrafts</h1>
-						<h2 id="description" class="text has-text-centered">Craft CMS Plugins made by <a target="_blank" href="https://skayo.github.io">Skayo</a></h2>
-
-						<article id="left-text" class="text margin-top-4">
-							SkayoCrafts is the alias of me, <a target="_blank" href="https://skayo.github.io">Skayo</a>, under which I develop all sorts of Craft CMS
-							plugins!<br>
-							Why use another name for my plugins instead of the one for all my other projects?<br>
-							Well I just wanted to keep these two things apart and have my plugins in one place and my normal projects in another.
-						</article>
-					</div>
-
-					<div id="right-side" class="column is-7">
-						<h2 id="title" class="text">
-							<u>My Craft CMS Plugins:</u>
-						</h2>
-
-						<article id="right-text" class="text content">
-							<ul id="plugins" class="has-text-left">
-								{{ plugin-list }}
-							</ul>
-						</article>
-					</div>
+			<div class="columns is-centered">
+				<div class="column is-7">
+					<article id="plugin-documentation" class="content text">
+						{{ content }}
+					</article>
 				</div>
-			</section>
+			</div>
 		</div>
 
 		<script src="/js/main.js"></script>

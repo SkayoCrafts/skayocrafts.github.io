@@ -1,0 +1,79 @@
+/* VARS */
+:root {
+	/* Logo */
+	--logo-width:       180px;
+	--logo-height:      150px;
+	--logo-offset:      15px;
+
+	/* Various Text */
+	--font-size: 1.05rem;
+
+	/* Colors */
+	--my-grey:          #343a40;
+	--my-light-grey:    #44484d;
+	--my-black:         #212529;
+
+	/* Fonts */
+	--font-header:      -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	--font-text:        "Roboto Mono", "Fira Code", Monaco, "DejaVu Sans Mono", "Lucida Console", "Andale Mono", monospace;
+}
+
+/* GLOBAL STYLES (Styles for multiple elements) */
+.col-centered {
+	margin: 0 auto;
+}
+
+.text {
+	font-family: var(--font-text);
+	color:       var(--my-black);
+	font-size:   var(--font-size)
+}
+
+.margin-top-4 {
+	margin-top: 1.5rem;
+}
+
+#content {
+	margin-top: 7rem;
+	margin-bottom: 7rem;
+}
+
+/* STYLE DEFINITIONS */
+#skayo-logo {
+	z-index:  99;
+	position: fixed;
+	bottom:   var(--logo-offset);
+	right:    var(--logo-offset);
+}
+
+#skayocrafts-logo {
+	z-index:  99;
+	position: fixed;
+	top:      var(--logo-offset);
+	left:     var(--logo-offset);
+}
+
+#skayo-logo img, #skayocrafts-logo img {
+	width:  var(--logo-width);
+	height: var(--logo-height);
+}
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 1279px) {
+	#skayo-logo img, #skayocrafts-logo img {
+		width:  calc(var(--logo-width) / 2.5);
+		height: calc(var(--logo-height) / 2.5);
+	}
+
+	.container.is-responsive {
+		padding-left:  10px;
+		padding-right: 10px;
+	}
+}
+
+@media screen and (max-width: 1087px) {
+	.container.is-responsive {
+		padding-left:  25px;
+		padding-right: 25px;
+	}
+}

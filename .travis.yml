@@ -5,6 +5,9 @@ branches:
   only:
     - source
 
+install:
+  - composer install
+
 script:
   - php ./_generator/generate.php
 
@@ -12,6 +15,8 @@ before_deploy:
   - rm -rf _**  # Remove all files and folders with a underscore prefix (generator files)
   - rm .gitignore
   - rm .travis.yml
+  - rm -rf vendor
+  - rm composer.*
 
 deploy:
   provider: pages

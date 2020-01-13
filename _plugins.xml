@@ -13,5 +13,6 @@
         ]]></description>
         <link-github>https://github.com/SkayoCrafts/social-gitlab</link-github>
         <link-packagist>https://packagist.org/packages/skayocrafts/social-gitlab</link-packagist>
+        <docs>https://github.com/SkayoCrafts/social-gitlab/blob/master/README.md</docs>
     </plugin>
 </plugins>

@@ -21,7 +21,7 @@
 
 		<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
 
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.0/css/bulma.min.css">
 		<link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 		<link rel="stylesheet" href="/css/plugin.css">
 
@@ -31,75 +31,85 @@
 		<div id="hexagonalImages">
 			<div id="skayocrafts-logo">
 				<a href="/">
-					<img class="animated fadeInDown" src="/assets/images/skayocrafts-logo.png" alt="SkayoCrafts Logo" title="SkayoCrafts - Craft CMS Plugins made by Skayo">
+					<img class="animated fadeInDown" data-reverse="fadeOutUp" src="/assets/images/skayocrafts-logo.png" alt="SkayoCrafts Logo" title="SkayoCrafts - Craft CMS Plugins made by Skayo">
 				</a>
 			</div>
 
 			<div id="skayo-logo">
 				<a href="https://skayo.github.io" target="_blank">
-					<img class="animated fadeInUp" src="/assets/images/skayo-logo.png" alt="Skayo Logo" title="Skayo - Here you can find my personal projects">
+					<img class="animated fadeInUp" data-reverse="fadeOutDown" src="/assets/images/skayo-logo.png" alt="Skayo Logo" title="Skayo - Here you can find my personal projects">
 				</a>
 			</div>
 		</div>
 
-		<div id="content" class="container is-responsive animated fadeIn">
-			<header>
-				<div class="columns">
-					<div id="intro" class="column is-6 is-offset-1">
-						<h1 id="name" class="has-text-centered">{{ name }}</h1>
-						<h2 id="description" class="text has-text-centered">{{ short-description }}</h2>
+		<div id="content" class="container is-responsive animated fadeIn" data-reverse="fadeOut">
+			<section>
+				<div class="columns is-centered is-vcentered is-variable is-8">
+					<div id="left-side" class="column is-7">
+
+						<h1 id="name">{{ name }}</h1>
+						<h2 id="description" class="text">{{ short-description }}</h2>
+
+						<article id="left-text" class="text margin-top-4">
+							{{ description }}
+						</article>
+
 					</div>
 
-					<div id="plugin-store" class="column is-narrow has-text-centered">
-						<a id="plugin-store-btn" class="button is-large" title="Click here to contact me via email" href="{{ link-store }}" target="_blank">
-							<svg id="store-icon" xmlns="http://www.w3.org/2000/svg" fill="#fff" viewBox="0 0 24 24">
-								<path d="M10 9v-1.098l1.047-4.902h1.905l1.048 4.9v1.098c0 1.067-.933 2.002-2 2.002s-2-.933-2-2zm5 0c0 1.067.934 2 2.001 2s1.999-.833 1.999-1.9v-1.098l-2.996-5.002h-1.943l.939 4.902v1.098zm-10 .068c0 1.067.933 1.932 2 1.932s2-.865 2-1.932v-1.097l.939-4.971h-1.943l-2.996 4.971v1.097zm-4 2.932h22v12h-22v-12zm2 8h18v-6h-18v6zm1-10.932v-1.097l2.887-4.971h-2.014l-4.873 4.971v1.098c0 1.066.933 1.931 2 1.931s2-.865 2-1.932zm15.127-6.068h-2.014l2.887 4.902v1.098c0 1.067.933 2 2 2s2-.865 2-1.932v-1.097l-4.873-4.971zm-.127-3h-14v2h14v-2z" />
-							</svg>
-							&nbsp;
-							<span id="plugin-store-btn-text">Plugin Store</span>
-						</a>
+					<div id="right-side" class="column is-7">
+						<div class="columns is-variable is-3">
+							<div class="column is-narrow">
 
-						<h4 id="plugin-store-price" class="text">{{ price }}</h4>
+								<div id="plugin-store" class="has-text-centered">
+									<a id="plugin-store-btn" class="button is-large" title="Go to plugin store page" href="{{ link-store }}" target="_blank">
+										<svg id="store-icon" xmlns="http://www.w3.org/2000/svg" fill="#fff" viewBox="0 0 24 24">
+											<path d="M10 9v-1.098l1.047-4.902h1.905l1.048 4.9v1.098c0 1.067-.933 2.002-2 2.002s-2-.933-2-2zm5 0c0 1.067.934 2 2.001 2s1.999-.833 1.999-1.9v-1.098l-2.996-5.002h-1.943l.939 4.902v1.098zm-10 .068c0 1.067.933 1.932 2 1.932s2-.865 2-1.932v-1.097l.939-4.971h-1.943l-2.996 4.971v1.097zm-4 2.932h22v12h-22v-12zm2 8h18v-6h-18v6zm1-10.932v-1.097l2.887-4.971h-2.014l-4.873 4.971v1.098c0 1.066.933 1.931 2 1.931s2-.865 2-1.932zm15.127-6.068h-2.014l2.887 4.902v1.098c0 1.067.933 2 2 2s2-.865 2-1.932v-1.097l-4.873-4.971zm-.127-3h-14v2h14v-2z" />
+										</svg>
+										&nbsp;
+										<span id="plugin-store-btn-text">Plugin Store</span>
+									</a>
+
+									<h4 id="plugin-store-price" class="title is-4 text">{{ price }}</h4>
+								</div>
+
+								<section id="docs" class="margin-top-4 has-text-centered is-{{ docsVisibility }}">
+									<a id="docs-btn" class="button is-medium" title="Go to plugin documentation" href="{{ docs }}">
+										<svg id="docs-icon" xmlns="http://www.w3.org/2000/svg" fill="#212529" viewBox="0 0 24 24">
+											<path d="M22 24h-17c-1.657 0-3-1.343-3-3v-18c0-1.657 1.343-3 3-3h17v24zm-2-4h-14.505c-1.375 0-1.375 2 0 2h14.505v-2zm-3-15h-10v3h10v-3z" />
+										</svg>
+										&nbsp;
+										<span id="docs-btn-text">Documentation</span>
+									</a>
+								</section>
+
+								<footer id="social-media" class="columns is-mobile is-variable is-3 is-centered animated fadeIn" data-reverse="fadeOut">
+									<a id="github" class="column is-narrow" href="{{ link-github }}" target="_blank" title="GitHub">
+										<svg class="social-logo" id="github-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+											<path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+										</svg>
+									</a>
+
+									<a id="packagist" class="column is-narrow" href="{{ link-packagist }}" target="_blank" title="Packagist">
+										<svg id="packagist-logo" class="social-logo" viewBox="-8 0 780 627.8" xmlns="http://www.w3.org/2000/svg">
+											<path d="M77 358v68a5 5 0 01-7 4L5 396a5 5 0 010-8l65-35a5 5 0 017 4zM488 597V355l-5-1-44 20v230h41a8 8 0 008-7zM761 332l-33-61-45 52z" />
+											<path d="M252 105h-38a12 12 0 00-7 2L76 193a12 12 0 00-5 10v412a12 12 0 0011 12h79a12 12 0 008-4l81-81L87 296a12 12 0 013-16h1l101-57a12 12 0 006-10v-45a12 12 0 013-8z" />
+											<path d="M432 627H318a8 8 0 01-6-4L85 293a8 8 0 012-11q0 0 0 0l111-62v146a8 8 0 008 7l233 1v246a7 7 0 01-7 7zM336 79a3 3 0 01-3-3V6a3 3 0 015-3l131 71a3 3 0 01-2 5z" />
+											<path d="M336 6l131 70H336zm0-6a6 6 0 00-6 6v70a6 6 0 006 6h131a6 6 0 003-11L339 1a6 6 0 00-3-1zM728 271l-97-12-49 47 2 13 43 68z" />
+											<path d="M626 387l-42-68-30-174a14 14 0 00-5-8l-78-62H321a13 13 0 00-5 1l-64 29 187 269 44-20z" />
+											<path d="M198 366V169a13 13 0 014-9l50-55 187 269-233-1a8 8 0 01-8-7z" />
+										</svg>
+									</a>
+								</footer>
+
+							</div>
+							<div class="column"></div>
+						</div>
 					</div>
-				</div>
-			</header>
-
-			<section class="margin-top-4">
-				<div class="columns is-centered">
-					<article id="plugin-description" class="text column is-7">
-						{{ description }}
-					</article>
 				</div>
 			</section>
 
-			<footer id="social-media" class="animated fadeIn">
-				<div class="columns is-mobile">
-					<a id="github" class="column is-6" href="{{ link-github }}" target="_blank" title="GitHub">
-						<svg class="social-logo" id="github-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-							<path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
-						</svg>
-					</a>
-
-					<a id="packagist" class="column is-6" href="{{ link-packagist }}" target="_blank" title="Packagist">
-						<svg class="social-logo" id="packagist-logo" viewBox="3.0181096 0 757.98354 624.19635" xmlns="http://www.w3.org/2000/svg">
-							<g transform="translate(0,-1.2338996)" style="stroke-width:6.03999996;stroke-linecap:round;stroke-linejoin:round" id="g12">
-								<path id="path2" d="m 76.62,357.52 v 68.42 a 4.58,4.58 0 0 1 -6.73,4 L 5.45,395.78 a 4.58,4.58 0 0 1 0,-8.09 l 64.44,-34.21 a 4.58,4.58 0 0 1 6.73,4 z"></path>
-								<path id="path4" d="M 488,596.62 V 355.35 L 482.01235,342.72 414.45091,354.47189 422.97647,604.3 H 480.3 c 4.23604,0.0166 7.68346,-3.40396 7.7,-7.64 z"></path>
-								<path id="path6" d="m 761,332 c 0.27,0.8 -32.74,-60.77 -32.74,-60.77 l -48.32864,50.7158 z"></path>
-								<path id="path8" d="m 251.59,104.92 h -38 c -2.28466,-4e-4 -4.51962,0.66696 -6.43,1.92 L 75.87,193 c -3.298904,2.16478 -5.287088,5.84424 -5.29,9.79 v 412.14 c 0,6.47278 5.247223,11.72 11.72,11.72 h 78.2 c 3.10542,-10e-4 6.08342,-1.23485 8.28,-3.43 L 253.45222,538.01667 128.23252,295.9879 C 124.66035,290.59186 85.065121,283.79392 90.46,280.22 c 0.246667,-0.16 14.09998,4.86094 14.35331,4.71427 L 192.36,237.94824 c 3.70506,-2.07177 19.35317,-20.00563 19.35294,-24.25059 L 198.36,168 c -0.0122,-2.90788 1.05705,-5.71646 3,-7.88 z"></path>
-								<path id="path10" d="M 431.85,626.65 H 318.32 c -2.52655,-10e-4 -4.89038,-1.24683 -6.32,-3.33 L 84.272353,292.60963 C 81.881383,289.11358 83.4444,284.59163 86.94,282.2 c 0.18,-0.12 -0.220858,-0.73407 -0.03419,-0.84074 L 198.33,219.95 V 365.6 c -3e-5,4.22434 3.4157,7.65348 7.64,7.67 l 233,1 v 245.24 c 0,3.94331 -3.19669,7.14 -7.14,7.14 z"></path>
-							</g>
-							<path id="path14" d="m 336.35,78.0961 c -1.65685,0 -3,-1.343146 -3,-3 V 4.7661004 c -0.0259,-2.2988637 2.43744,-3.77133379 4.45,-2.66 L 468.65247,72.789186 c 2.86796,1.43959 1.92526,5.356943 -1.28247,5.266914 z"></path>
-							<path id="path16" d="M 336.35,4.7661004 469.12037,77.986712 336.35,75.0361 Z m 0,-6 c -3.31371,0 -6,2.6862915 -6,6 V 75.0761 c 0,3.313708 2.68644,5.968406 6,6 l 133.06543,1.268763 c 6.27874,0.0278 5.69174,-6.409854 -0.13062,-9.598645 L 339.2,-0.51389959 c -0.8756,-0.47260093 -1.855,-0.72002621 -2.85,-0.72000001 z"></path>
-							<g transform="translate(0,-1.2338996)" style="stroke-width:6.03999996;stroke-linecap:round;stroke-linejoin:round" id="g24">
-								<path id="path18" d="M 728.34,271.11 631.18,259.04 581.6,306.21 577.29044,321.09985 626.39,387.08 Z"></path>
-								<path id="path20" d="m 626.39,387.08 -42.59,-68.15 -30,-173.58 c -0.58917,-3.41292 -2.41557,-6.48896 -5.13,-8.64 L 470.94,75.1 H 321.41 c -1.80509,-6.9e-4 -3.59023,0.37746 -5.24,1.11 L 250.23272,105.44111 416.29999,384.98236 482.66,354.07 Z"></path>
-								<path id="path22" d="m 191.3497,369.60588 -7.67794,-191.75882 c 9.7e-4,-3.23222 9.21776,-17.03051 11.39177,-19.42235 L 251.6,104.91 439,374.3 206,387.65442 c -4.23604,-0.0165 -14.6669,-13.8125 -14.6503,-18.04854 z"></path>
-							</g>
-						</svg>
-					</a>
-				</div>
-			</footer>
 		</div>
+
+		<script src="/js/main.js"></script>
 	</body>
 </html>

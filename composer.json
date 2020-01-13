@@ -1,0 +1,16 @@
+{
+    "name": "skayocrafts/website",
+    "description": "SkayoCrafts Website",
+    "authors": [
+        {
+            "name": "Skayo",
+            "email": "contact@skayo.dev",
+            "homepage": "https://skayo.dev"
+        }
+    ],
+    "require": {
+        "erusev/parsedown": "^1.7",
+        "erusev/parsedown-extra": "^0.8"
+    },
+    "homepage": "https://skayocrafts.github.io/"
+}

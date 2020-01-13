@@ -1,28 +1,32 @@
 /* VARS */
 :root {
 	/* Logo */
-	--logo-width:       180px;
-	--logo-height:      150px;
-	--logo-offset:      15px;
+	--logo-width:              180px;
+	--logo-height:             150px;
+	--logo-offset:             15px;
 
 	/* Header */
-	--header-size:      5rem;
-	--header-desc-size: 1.5rem;
-	--social-icon-size: 50px;
-	--button-padding:   2.5rem;
-	--button-icon-size: 24px;
+	--header-size:             5rem;
+	--header-desc-size:        1.5rem;
+	--social-icon-size:        50px;
+	--button-padding:          2.5rem;
+	--button-icon-size:        24px;
+
+	/* Docs */
+	--docs-button-icon-size:   17px;
 
 	/* Various Text */
 	--plugin-description-size: 1.05rem;
 
 	/* Colors */
-	--my-grey:          #343a40;
-	--my-light-grey:    #44484d;
-	--my-black:         #212529;
+	--my-grey:                 #343a40;
+	--my-light-grey:           #44484d;
+	--my-black:                #212529;
+	--my-light-black:          #33383c;
 
 	/* Fonts */
-	--font-header:      -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-	--font-text:        "Roboto Mono", "Fira Code", Monaco, "DejaVu Sans Mono", "Lucida Console", "Andale Mono", monospace;
+	--font-header:             -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	--font-text:               "Roboto Mono", "Fira Code", Monaco, "DejaVu Sans Mono", "Lucida Console", "Andale Mono", monospace;
 }
 
 /* GLOBAL STYLES (Styles for multiple elements) */
@@ -66,15 +70,12 @@
 	transform: translateY(-50%) translateX(-50%);
 }
 
-header {
-	margin: 0 auto;
-}
-
-#intro {
+#left-side {
 	margin-right: 0px;
+	border-right: #000 dashed 1px;
 }
 
-#intro #name {
+#left-side #name {
 	font-family:    var(--font-header);
 	font-weight:    900;
 	font-size:      var(--header-size);
@@ -82,13 +83,29 @@ header {
 	color:          var(--my-black);
 }
 
-#intro #description {
+#left-side #description, #right-side #title {
 	font-weight: normal;
 	font-size:   var(--header-desc-size);
 }
 
-#plugin-store {
-	margin: auto 0;
+#right-side #plugin-store-btn {
+	background-color: var(--my-black);
+	color:            #fff;
+	font-family:      var(--font-text);
+	padding:          var(--button-padding);
+}
+
+#plugin-store-btn #store-icon {
+	vertical-align: sub;
+}
+
+#left-text {
+	margin-right: 0px;
+	font-size: var(--left-text-size);
+}
+
+#right-text {
+	margin-left: 0px;
 }
 
 #plugin-store #plugin-store-btn {
@@ -96,45 +113,80 @@ header {
 	color:            #fff;
 	font-family:      var(--font-text);
 	padding:          var(--button-padding);
+	transition:       0.3s ease background-color;
+}
+
+#plugin-store #plugin-store-btn:hover {
+	background-color: var(--my-light-black);
 }
 
 #plugin-store #plugin-store-btn #store-icon {
 	vertical-align: sub;
-	width:  var(--button-icon-size);
-	height: var(--button-icon-size);
+	width:          var(--button-icon-size);
+	height:         var(--button-icon-size);
 }
 
 #plugin-store #plugin-store-price {
 	margin-top: 10px;
-	font-size: var(--plugin-description-size);
+	font-size:  var(--plugin-description-size);
 }
 
 #plugin-description {
 	margin-right: 0px;
-	font-size: var(--plugin-description-size);
+	font-size:    var(--plugin-description-size);
 }
 
 #right-text {
 	margin-left: 0px;
 }
 
-#social-media {
-	position:  absolute;
-	left:      50%;
-	transform: translateX(-50%);
+#docs {
+	margin-top: 2rem;
+}
 
-	margin-top: 3rem;
+#docs #docs-btn {
+	background-color: transparent;
+	border-color:     var(--my-black);
+	color:            var(--my-black);
+	font-family:      var(--font-text);
+	transition:       0.3s ease background-color;
+}
+
+#docs #docs-btn:hover {
+	background-color: #f5f5f5;
+}
+
+#docs #docs-btn #docs-icon {
+	vertical-align: sub;
+	width:          var(--docs-button-icon-size);
+	height:         var(--docs-button-icon-size);
+}
+
+#social-media {
+	margin-top: 1rem;
 }
 
 .social-logo {
-	fill:   var(--my-grey);
-	width:  var(--social-icon-size);
-	height: var(--social-icon-size);
+	fill:       var(--my-grey);
+	width:      var(--social-icon-size);
+	height:     var(--social-icon-size);
+	transition: 0.3s ease fill, 0.3s ease stroke;
+}
+
+#packagist-logo {
+	stroke:          var(--my-grey);
+	stroke-linecap:  round;
+	stroke-linejoin: round;
+	stroke-width:    20;
 }
 
 .social-logo:hover {
 	fill:   var(--my-light-grey);
 	cursor: pointer;
+}
+
+#packagist-logo:hover {
+	stroke: var(--my-light-grey);
 }
 
 /* MEDIA QUERIES */
@@ -154,22 +206,43 @@ header {
 		height: calc(var(--logo-height) / 2.5);
 	}
 
-	#intro #name {
+	#left-side {
+		border-right: none;
+	}
+
+	#left-side #name {
 		font-size: calc(var(--header-size) / 1.8);
 	}
 
-	#intro #description {
+	#left-side #description {
 		font-size: calc(var(--header-desc-size) / 1.4);
 	}
 
+	#right-side #title {
+		font-size: calc(var(--header-desc-size) / 1.3);
+	}
+
 	#plugin-store #plugin-store-btn {
-		padding:   calc(var(--button-padding) / 2) !important;
+		padding:   calc(var(--button-padding) / 1.3) !important;
 		font-size: 1rem;
 	}
 
 	#plugin-store #plugin-store-btn #store-icon {
 		width:  calc(var(--button-icon-size) / 1.5);
 		height: calc(var(--button-icon-size) / 1.5);
+	}
+
+	#docs {
+		margin-top: 1rem;
+	}
+
+	#docs #docs-btn {
+		font-size: 1rem;
+	}
+
+	#docs #docs-btn #docs-icon {
+		width:  calc(var(--docs-button-icon-size) / 1.5);
+		height: calc(var(--docs-button-icon-size) / 1.5);
 	}
 
 	#social-media {
