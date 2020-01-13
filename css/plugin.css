@@ -72,7 +72,6 @@
 
 #left-side {
 	margin-right: 0px;
-	border-right: #000 dashed 1px;
 }
 
 #left-side #name {
@@ -86,6 +85,10 @@
 #left-side #description, #right-side #title {
 	font-weight: normal;
 	font-size:   var(--header-desc-size);
+}
+
+#right-side {
+	border-left: #000 dashed 1px;
 }
 
 #right-side #plugin-store-btn {
@@ -211,16 +214,16 @@
 		height: calc(var(--logo-height) / 2.5);
 	}
 
-	#left-side {
-		border-right: none;
-	}
-
 	#left-side #name {
 		font-size: calc(var(--header-size) / 1.8);
 	}
 
 	#left-side #description {
 		font-size: calc(var(--header-desc-size) / 1.2);
+	}
+
+	#right-side {
+		border-right: none;
 	}
 
 	#right-side #title {
