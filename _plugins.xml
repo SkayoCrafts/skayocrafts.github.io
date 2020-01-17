@@ -5,7 +5,7 @@
         <handle>cage</handle>
         <short-description>Craft Age-Verification Plugin</short-description>
         <link-store>https://plugins.craftcms.com/cage</link-store>
-        <price>10 $</price>
+        <price>19 $</price>
         <description><![CDATA[
             This plugin provides a simple way to add an age-verification-gate to your website, where the user has to verify their age.<br>
             It allows site administrators to have age-restricted sections on the website, where only adults can enter.<br>
@@ -20,7 +20,7 @@
         <link-packagist>https://packagist.org/packages/skayocrafts/cage</link-packagist>
         <docs>https://github.com/SkayoCrafts/Cage/blob/master/DOCS.md</docs>
     </plugin>
-    
+
 
     <plugin>
         <name>Social GitLab</name>
