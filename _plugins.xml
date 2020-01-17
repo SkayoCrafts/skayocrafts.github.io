@@ -20,6 +20,7 @@
         <link-packagist>https://packagist.org/packages/skayocrafts/cage</link-packagist>
         <docs>https://github.com/SkayoCrafts/Cage/blob/master/DOCS.md</docs>
     </plugin>
+    
 
     <plugin>
         <name>Social GitLab</name>
