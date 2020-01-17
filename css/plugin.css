@@ -72,6 +72,7 @@
 
 #left-side {
 	margin-right: 0px;
+	border-right: #000 dashed 1px;
 }
 
 #left-side #name {
@@ -85,10 +86,6 @@
 #left-side #description, #right-side #title {
 	font-weight: normal;
 	font-size:   var(--header-desc-size);
-}
-
-#right-side {
-	border-left: #000 dashed 1px;
 }
 
 #right-side #plugin-store-btn {
@@ -222,7 +219,7 @@
 		font-size: calc(var(--header-desc-size) / 1.2);
 	}
 
-	#right-side {
+	#left-side {
 		border-right: none;
 	}
 

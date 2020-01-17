@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <plugins>
     <plugin>
+        <name>Cage</name>
+        <handle>cage</handle>
+        <short-description>Craft Age-Verification Plugin</short-description>
+        <link-store>https://plugins.craftcms.com/cage</link-store>
+        <price>10 $</price>
+        <description><![CDATA[
+            This plugin provides a simple way to add an age-verification-gate to your website, where the user has to verify their age.<br>
+            It allows site administrators to have age-restricted sections on the website, where only adults can enter.<br>
+            All this happens on a nice looking page which you can customize <b>a lot</b>! (You can even have some custom CSS)<br>
+            <br>
+            The plugin also features a lot of different ways the user can verify their age:<br>
+            Drop-Downs? Input Fields? Just some buttons? This plugin has everything.<br>
+            <br>
+            If you have adult-content, or content that is not intended to be seen by minors, this is probably the best and only plugin on the market right now!<br>
+        ]]></description>
+        <link-github>https://github.com/SkayoCrafts/cage</link-github>
+        <link-packagist>https://packagist.org/packages/skayocrafts/cage</link-packagist>
+        <docs>https://github.com/SkayoCrafts/Cage/blob/master/DOCS.md</docs>
+    </plugin>
+
+    <plugin>
         <name>Social GitLab</name>
         <handle>social-gitlab</handle>
         <short-description>GitLab integration for Social</short-description>
