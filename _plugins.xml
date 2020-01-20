@@ -21,6 +21,23 @@
         <docs>https://github.com/SkayoCrafts/Cage/blob/master/DOCS.md</docs>
     </plugin>
 
+    <plugin>
+        <name>Sidebar Shortcuts</name>
+        <handle>sidebar-shortcuts</handle>
+        <short-description>Add Shortcuts to the CP Sidebar</short-description>
+        <link-store>https://plugins.craftcms.com/sidebar-shortcuts</link-store>
+        <price>Free</price>
+        <description><![CDATA[
+            This plugin adds the functionality to add simple shortcut-links to the sidebar in the control panel of Craft CMS.<br>
+            This is useful for quick access to various plugins or other important stuff!<br>
+            For example if you have a a settings page from plugin that you visit often, like "cage/settings/appearance", you can add a Shortcut to the sidebar and get there with just one simple click, instead of three!<br>
+            <br>
+            I originally made this plugin just for myself, as a little time-saver, but I found it so useful that I wanted to share it!
+        ]]></description>
+        <link-github>https://github.com/SkayoCrafts/Sidebar-Shortcuts</link-github>
+        <link-packagist>https://packagist.org/packages/skayocrafts/sidebar-shortcuts</link-packagist>
+        <docs>https://github.com/SkayoCrafts/Sidebar-Shortcuts/blob/master/DOCS.md</docs>
+    </plugin>
 
     <plugin>
         <name>Social GitLab</name>
