@@ -1,0 +1,274 @@
+/* VARS */
+:root {
+	/* Logo */
+	--logo-width:              180px;
+	--logo-height:             150px;
+	--logo-offset:             15px;
+
+	/* Header */
+	--header-size:             5rem;
+	--header-desc-size:        1.5rem;
+	--social-icon-size:        50px;
+	--button-padding:          2.5rem;
+	--button-icon-size:        24px;
+
+	/* Docs */
+	--docs-button-icon-size:   17px;
+
+	/* Various Text */
+	--plugin-description-size: 1.05rem;
+
+	/* Colors */
+	--my-grey:                 #343a40;
+	--my-light-grey:           #44484d;
+	--my-black:                #212529;
+	--my-light-black:          #33383c;
+
+	/* Fonts */
+	--font-header:             -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	--font-text:               "Roboto Mono", "Fira Code", Monaco, "DejaVu Sans Mono", "Lucida Console", "Andale Mono", monospace;
+}
+
+/* GLOBAL STYLES (Styles for multiple elements) */
+.col-centered {
+	margin: 0 auto;
+}
+
+.text {
+	font-family: var(--font-text);
+	color:       var(--my-black);
+}
+
+.margin-top-4 {
+	margin-top: 1.5rem;
+}
+
+/* STYLE DEFINITIONS */
+#skayo-logo {
+	z-index:  99;
+	position: fixed;
+	bottom:   var(--logo-offset);
+	right:    var(--logo-offset);
+}
+
+#skayocrafts-logo {
+	z-index:  99;
+	position: fixed;
+	top:      var(--logo-offset);
+	left:     var(--logo-offset);
+}
+
+#skayo-logo img, #skayocrafts-logo img {
+	width:  var(--logo-width);
+	height: var(--logo-height);
+}
+
+#content {
+	position:  absolute;
+	top:       50%;
+	left:      50%;
+	transform: translateY(-50%) translateX(-50%);
+}
+
+#left-side {
+	margin-right: 0px;
+	border-right: #000 dashed 1px;
+}
+
+#left-side #name {
+	font-family:    var(--font-header);
+	font-weight:    900;
+	font-size:      var(--header-size);
+	letter-spacing: -0.125rem;
+	color:          var(--my-black);
+	line-height:    1;
+}
+
+#left-side #description, #right-side #title {
+	font-weight: normal;
+	font-size:   var(--header-desc-size);
+}
+
+#right-side #plugin-store-btn {
+	background-color: var(--my-black);
+	color:            #fff;
+	font-family:      var(--font-text);
+	padding:          var(--button-padding);
+}
+
+#plugin-store-btn #store-icon {
+	vertical-align: sub;
+}
+
+#left-text {
+	margin-right: 0px;
+	font-size:    var(--left-text-size);
+}
+
+#right-text {
+	margin-left: 0px;
+}
+
+#plugin-store #plugin-store-btn {
+	background-color: var(--my-black);
+	color:            #fff;
+	font-family:      var(--font-text);
+	padding:          var(--button-padding);
+	transition:       0.3s ease background-color;
+}
+
+#plugin-store #plugin-store-btn:hover {
+	background-color: var(--my-light-black);
+}
+
+#plugin-store #plugin-store-btn #store-icon {
+	vertical-align: sub;
+	width:          var(--button-icon-size);
+	height:         var(--button-icon-size);
+}
+
+#plugin-store #plugin-store-price {
+	margin-top: 10px;
+	font-size:  var(--plugin-description-size);
+}
+
+#plugin-description {
+	margin-right: 0px;
+	font-size:    var(--plugin-description-size);
+}
+
+#right-text {
+	margin-left: 0px;
+}
+
+#docs {
+	margin-top: 2rem;
+}
+
+#docs #docs-btn {
+	background-color: transparent;
+	border-color:     var(--my-black);
+	color:            var(--my-black);
+	font-family:      var(--font-text);
+	transition:       0.3s ease background-color;
+}
+
+#docs #docs-btn:hover {
+	background-color: #f5f5f5;
+}
+
+#docs #docs-btn #docs-icon {
+	vertical-align: sub;
+	width:          var(--docs-button-icon-size);
+	height:         var(--docs-button-icon-size);
+}
+
+#social-media {
+	margin-top:    1rem;
+	margin-bottom: 0;
+}
+
+.social-logo {
+	fill:       var(--my-grey);
+	width:      var(--social-icon-size);
+	height:     var(--social-icon-size);
+	transition: 0.3s ease fill, 0.3s ease stroke;
+}
+
+#packagist-logo {
+	stroke:          var(--my-grey);
+	stroke-linecap:  round;
+	stroke-linejoin: round;
+	stroke-width:    20;
+}
+
+.social-logo:hover {
+	fill:   var(--my-light-grey);
+	cursor: pointer;
+}
+
+#packagist-logo:hover {
+	stroke: var(--my-light-grey);
+}
+
+#version {
+	font-size: var(--plugin-description-size);
+}
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 1279px) {
+	#content {
+		position:      inherit;
+		top:           inherit;
+		left:          inherit;
+		transform:     inherit;
+
+		margin-top:    6rem;
+		margin-bottom: 9rem;
+	}
+
+	#skayo-logo img, #skayocrafts-logo img {
+		width:  calc(var(--logo-width) / 2.5);
+		height: calc(var(--logo-height) / 2.5);
+	}
+
+	#left-side #name {
+		font-size: calc(var(--header-size) / 1.8);
+	}
+
+	#left-side #description {
+		font-size: calc(var(--header-desc-size) / 1.2);
+	}
+
+	#left-side {
+		border-right: none;
+	}
+
+	#right-side #title {
+		font-size: calc(var(--header-desc-size) / 1.3);
+	}
+
+	#plugin-store #plugin-store-btn {
+		padding:   calc(var(--button-padding) / 1.3) !important;
+		font-size: 1.5rem;
+	}
+
+	#plugin-store #plugin-store-btn #store-icon {
+		width:  calc(var(--button-icon-size) / 1.5);
+		height: calc(var(--button-icon-size) / 1.5);
+	}
+
+	#docs {
+		margin-top: 1.5rem;
+	}
+
+	#docs #docs-btn {
+		font-size: 1rem;
+	}
+
+	#docs #docs-btn #docs-icon {
+		width:  calc(var(--docs-button-icon-size) / 1.5);
+		height: calc(var(--docs-button-icon-size) / 1.5);
+	}
+
+	#social-media {
+		margin-top: 1.5rem;
+	}
+
+	.social-logo {
+		width:  calc(var(--social-icon-size) / 1.8);
+		height: calc(var(--social-icon-size) / 1.8);
+	}
+
+	.container.is-responsive {
+		padding-left:  10px;
+		padding-right: 10px;
+	}
+}
+
+@media screen and (max-width: 1087px) {
+	.container.is-responsive {
+		padding-left:  25px;
+		padding-right: 25px;
+	}
+}

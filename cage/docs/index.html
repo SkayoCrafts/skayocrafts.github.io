@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="194x194" href="/assets/favicons/favicon-194x194.png">
+		<link rel="icon" type="image/png" sizes="192x192" href="/assets/favicons/android-chrome-192x192.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+		<link rel="manifest" href="/assets/favicons/site.webmanifest">
+		<link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#000000">
+		<link rel="shortcut icon" href="/assets/favicons/favicon.ico">
+		<meta name="apple-mobile-web-app-title" content="SkayoCrafts">
+		<meta name="application-name" content="SkayoCrafts">
+		<meta name="msapplication-TileColor" content="#000000">
+		<meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png">
+		<meta name="msapplication-config" content="/assets/favicons/browserconfig.xml">
+		<meta name="theme-color" content="#000000">
+
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.0/css/bulma.min.css">
+		<link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+		<link rel="stylesheet" href="/css/docs.css">
+
+		<title>SkayoCrafts - Cage Documentation</title>
+	</head>
+	<body>
+		<div id="hexagonalImages">
+			<div id="skayocrafts-logo">
+				<a href="/cage">
+					<img class="animated fadeInDown" data-reverse="fadeOutUp" src="/assets/images/skayocrafts-logo.png" alt="SkayoCrafts Logo" title="SkayoCrafts - Craft CMS Plugins made by Skayo">
+				</a>
+			</div>
+
+			<div id="skayo-logo">
+				<a href="https://skayo.github.io" target="_blank">
+					<img class="animated fadeInUp" data-reverse="fadeOutDown" src="/assets/images/skayo-logo.png" alt="Skayo Logo" title="Skayo - Here you can find my personal projects">
+				</a>
+			</div>
+		</div>
+
+		<div id="content" class="container is-responsive animated fadeIn" data-reverse="fadeOut">
+			<div class="columns is-centered">
+				<div class="column is-7">
+					<article id="plugin-documentation" class="content text">
+						<h1 id="cage-documentation">Cage Documentation</h1>
+<h2 id="requirements">Requirements</h2>
+<h4 id="craft-cms">Craft CMS</h4>
+<p>Cage requires Craft CMS 3.0 or greater.</p>
+<h4 id="php">PHP</h4>
+<p>Cage requires PHP 7.0 or greater.</p>
+<h2 id="installation">Installation</h2>
+<p>You can install Cage via the Craft Plugin Store, or through Composer.</p>
+<h4 id="craft-plugin-store">Craft Plugin Store</h4>
+<p>To install <strong>Cage</strong>, navigate to the <em>Plugin Store</em> section of your Craft control panel, search for <code>Cage</code>, and click the <em>Install</em> button.</p>
+<h4 id="composer">Composer</h4>
+<p>You can also add the package to your project using Composer.</p>
+<p>Open your terminal and go to your Craft project:</p>
+<pre><code>cd /path/to/project</code></pre>
+<p>Then tell Composer to load the plugin:</p>
+<pre><code>composer require skayocrafts/cage</code></pre>
+<p>Then tell Craft to install the plugin:</p>
+<pre><code>./craft install/plugin cage</code></pre>
+<h2 id="usage">Usage</h2>
+<p>To require a user to verify their age, use the <code>{% requireAge %}</code> twig tag.<br />
+For example to require the user to be 18 years or older to visit your site, add an</p>
+<pre><code class="language-twig">{% requireAge 18 %}</code></pre>
+<p>at the top of your twig template.</p>
+<blockquote>
+<p>If you don't specify an age, like <code>18</code> in this case, the plugin will use the default age, specified in the plugin settings:</p>
+<pre><code class="language-twig">{# This will fallback to the default age: #}
+
+{% requireAge %} </code></pre>
+</blockquote>
+<p>The reason I've decided to use this method, and not like a list of protected url paths or something is, that this way, you can exactly control on which sites there will be age verification.<br />
+For example if your site uses one layout template file, then specifying the required age there, requires age verification across the whole website.<br />
+But if you just have a single page, like a gallery, that needs age verification, you can just add the <code>requireAge</code> tag in the related twig template (<code>gallery.twig</code>), and no other site will be affected by it.<br />
+Also this way, you can have different age requirements across the site.</p>
+<h2 id="configuration">Configuration</h2>
+<p>The configuration of Cage is pretty complex, because you can do <strong>a lot</strong> of customisation.
+Not only, you have the general settings, like the age verification method (which there are plenty of), but you also have the ability to change the text content and the whole appearance of the age verification page.<br />
+You can play around a lot with different styles and layouts, just find out what suits you the best!</p>
+<p>You can find the plugin settings in the Control Panel, at <em>Settings</em> → <em>Cage</em>.</p>
+<h4 id="config-file">Config File</h4>
+<p>If you want to use a config file, instead of directly changing the settings in the control panel, copy the <code>src/config.php</code> file to <code>/path/to/project/config</code> as <code>cage.php</code> and make your changes there to override the default settings.  </p>
+<p>Once copied to <code>/path/to/project/config/cage.php</code>, this file will be multi-environment aware as well, so you can have different settings groups for each environment, just as you do for <code>general.php</code>.</p>
+					</article>
+				</div>
+			</div>
+		</div>
+
+		<script src="/js/main.js"></script>
+	</body>
+</html>

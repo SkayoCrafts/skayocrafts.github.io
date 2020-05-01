@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="194x194" href="/assets/favicons/favicon-194x194.png">
+		<link rel="icon" type="image/png" sizes="192x192" href="/assets/favicons/android-chrome-192x192.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+		<link rel="manifest" href="/assets/favicons/site.webmanifest">
+		<link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#000000">
+		<link rel="shortcut icon" href="/assets/favicons/favicon.ico">
+		<meta name="apple-mobile-web-app-title" content="SkayoCrafts">
+		<meta name="application-name" content="SkayoCrafts">
+		<meta name="msapplication-TileColor" content="#000000">
+		<meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png">
+		<meta name="msapplication-config" content="/assets/favicons/browserconfig.xml">
+		<meta name="theme-color" content="#000000">
+
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.0/css/bulma.min.css">
+		<link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+		<link rel="stylesheet" href="/css/docs.css">
+
+		<title>SkayoCrafts - Social GitLab Documentation</title>
+	</head>
+	<body>
+		<div id="hexagonalImages">
+			<div id="skayocrafts-logo">
+				<a href="/social-gitlab">
+					<img class="animated fadeInDown" data-reverse="fadeOutUp" src="/assets/images/skayocrafts-logo.png" alt="SkayoCrafts Logo" title="SkayoCrafts - Craft CMS Plugins made by Skayo">
+				</a>
+			</div>
+
+			<div id="skayo-logo">
+				<a href="https://skayo.github.io" target="_blank">
+					<img class="animated fadeInUp" data-reverse="fadeOutDown" src="/assets/images/skayo-logo.png" alt="Skayo Logo" title="Skayo - Here you can find my personal projects">
+				</a>
+			</div>
+		</div>
+
+		<div id="content" class="container is-responsive animated fadeIn" data-reverse="fadeOut">
+			<div class="columns is-centered">
+				<div class="column is-7">
+					<article id="plugin-documentation" class="content text">
+						<h1 id="gitlab-login-provider-for-social">GitLab login provider for Social</h1>
+<p>This plugin provides a <a href="https://gitlab.com/" target="_blank">GitLab</a> integration for <a href="https://github.com/dukt/social" target="_blank">Social 2 for Craft CMS</a>.</p>
+<h2 id="requirements">Requirements</h2>
+<p>This plugin requires Social 2.0.0 or later.</p>
+<h2 id="installation">Installation</h2>
+<p>To install the plugin, follow these instructions.</p>
+<ol>
+<li>
+<p>Open your terminal and go to your Craft project:</p>
+<pre><code>cd /path/to/project</code></pre>
+</li>
+<li>
+<p>Then tell Composer to load the plugin:</p>
+<pre><code>composer require skayocrafts/social-gitlab</code></pre>
+</li>
+<li>
+<p>In the Control Panel, go to Settings → Plugins and click the “Install” button for GitLab.</p>
+</li>
+</ol>
+<h2 id="setup">Setup</h2>
+<p>To enable the GitLab login provider, go to Social → Settings → Login Providers, and configure the “GitLab” login provider.</p>
+<h2 id="self-hosted-gitlab-config">Self-Hosted GitLab Config</h2>
+<p>If you have a self-hosted GitLab and want to use it instead of gitlab.com for OAuth,
+then you can set the domain in <code>config/social.php</code> like this:</p>
+<pre><code class="language-php">&lt;?php
+
+return [
+    'loginProviders' =&gt; [
+        // ... some other config ...
+        'gitlab' =&gt; [
+            // ... some other config ...
+            'oauth' =&gt; [
+                // ... some other config ...
+                'options' =&gt; [
+                    // ... some other config ...
+                    'domain' =&gt; 'https://gitlab.example.com'    
+                ]
+            ],
+        ]
+    ]
+];</code></pre>
+<p>For more information about the social configuration, <a href="https://docs.dukt.net/social/v2/configuration.html" target="_blank">look here</a></p>
+<h2 id="some-additional-information">Some additional Information</h2>
+<h3 id="default-user-field-mapping">Default User Field Mapping</h3>
+<p>The GitLab login provider defines the following user field mapping by default:</p>
+<pre><code>[
+    'id'       =&gt; '{{ profile.getId() }}',
+    'email'    =&gt; '{{ profile.getEmail() }}',
+    'username' =&gt; '{{ profile.getUsername() }}',
+    'photo'    =&gt; '{{ profile.getAvatarUrl() }}',
+]</code></pre>
+<p>You can override and extend the default mapping using the <a href="https://docs.dukt.net/social/v2/configuration.html#loginproviders" target="_blank">loginProviders</a> config.</p>
+<h3 id="profile-object">Profile Object</h3>
+<p>The profile response for the GitLab login provider is a <a href="https://github.com/omines/oauth2-gitlab/blob/master/src/Provider/GitlabResourceOwner.php" target="_blank">GitlabResourceOwner</a> object.</p>
+<h4 id="methods">Methods</h4>
+<ul>
+<li><code>getId()</code></li>
+<li><code>getName()</code></li>
+<li><code>getUsername()</code></li>
+<li><code>getEmail()</code></li>
+<li><code>getAvatarUrl()</code></li>
+<li><code>getProfileUrl()</code></li>
+<li><code>getToken()</code></li>
+<li><code>isActive()</code></li>
+<li><code>isAdmin()</code></li>
+<li><code>isExternal()</code></li>
+<li><code>toArray()</code></li>
+<li><code>getDomain()</code></li>
+<li><code>setDomain()</code></li>
+<li><code>getApiClient()</code></li>
+<li><code>get()</code></li>
+</ul>
+					</article>
+				</div>
+			</div>
+		</div>
+
+		<script src="/js/main.js"></script>
+	</body>
+</html>
